@@ -229,7 +229,36 @@
   color: #7a4c2e;
   margin-bottom: 10px;
 }
+.slider {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
 
+.fade-slide {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-slide.active {
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+}
 
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -267,21 +296,20 @@
     <h1>We Design Strong Foundations</h1>
     <p>Specialized in structural design and drafting for US-based residential and apartment projects, including Arizona.</p>
   </section>  
-  <div class="slider">
-    <div class="slides">
-      <div class="slide">
-        <img src="https://via.placeholder.com/1200x400?text=Project+1" alt="Project 1">
-        <div class="slide-caption">Apartment Complex - Phoenix, AZ | RCC Framing & Foundation</div>
-      </div>
-      <div class="slide">
-        <img src="https://via.placeholder.com/1200x400?text=Project+2" alt="Project 2">
-        <div class="slide-caption">Residential Villa - Tucson, AZ | Wood Framing & Seismic Design</div>
-      </div>
-      <div class="slide">
-        <img src="https://www.countryliving.com/home-design/g1887/tiny-house/" alt="Project 3">
-      </div>
-    </div>
-  </div> 
+<div class="slider">
+  <div class="fade-slide active">
+    <img src="img1.jpg" alt="Project 1">
+    <div class="slide-caption">Apartment Complex - Phoenix, AZ | RCC Framing & Foundation</div>
+  </div>
+  <div class="fade-slide">
+    <img src="img2.jpg" alt="Project 2">
+    <div class="slide-caption">Residential Villa - Tucson, AZ | Wood Framing & Seismic Design</div>
+  </div>
+  <div class="fade-slide">
+    <img src="img3.jpg" alt="Project 3">
+    <div class="slide-caption">Residential Villa - Tucson, AZ | Wood Framing & Seismic Design</div>
+  </div>
+</div>
 
 <section id="services">
   <h2>Our Services</h2>
@@ -340,6 +368,17 @@
     div.addEventListener('mouseenter', () => div.querySelector('div').style.display = 'flex');
     div.addEventListener('mouseleave', () => div.querySelector('div').style.display = 'none');
   });
+  
+  let slides = document.querySelectorAll('.fade-slide');
+  let current = 0;
+
+  function showNextSlide() {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  setInterval(showNextSlide, 4000); 
 </script>
 </body>
 </html>
