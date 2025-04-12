@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Euler Design Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4efe3;
+      color: #4b3621;
+    }
+    header {
+      background: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-color: #8b5e3c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #7a4c2e;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      background-color: #5e3b24;
+    }
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #e0c7a2;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+    }
+    .hero p {
+      font-size: 1.2em;
+      color: #6e4c2e;
+    }
+    .slider {
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 12s infinite;
+    }
+    .slide {
+      position: relative;
+      width: 100%;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .slide-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .service-card {
+      background: #fff8f0;
+      border: 1px solid #c7a17a;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      width: 300px;
+      box-shadow: 0 2px 8px rgba(102, 51, 0, 0.2);
+    }
+    .service-card h3 {
+      color: #6e4c2e;
+    }
+    .team {
+      background-color: #f4e8d4;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .team h2 {
+      font-size: 2em;
+      margin-bottom: 40px;
+      color: #6e4c2e;
+    }
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .member {
+      width: 250px;
+      margin: 10px;
+      background-color: #fffaf2;
+      border: 1px solid #c7a17a;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(102, 51, 0, 0.1);
+    }
+    .member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .member h4 {
+      margin: 15px 0 5px;
+      color: #5c3b1e;
+    }
+    .member p {
+      font-size: 0.9em;
+      color: #6e4c2e;
+    }
+    .software {
+      background-color: #e9dbc5;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .software h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #6e4c2e;
+    }
+    .software-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .software-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fffaf2;
+      border: 1px solid #c7a17a;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      color: #4b3621;
+      box-shadow: 0 1px 4px rgba(102, 51, 0, 0.1);
+    }
+    .software-item img {
+      width: 30px;
+      height: 30px;
+    }
+    footer {
+      background-color: #7a4c2e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }...(rest of the code remains the same)...
+
+  <style>
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #7a4c2e;
+      position: relative;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav li {
+      position: relative;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+    }
+    nav a:hover {
+      background-color: #5e3b24;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #7a4c2e;
+      min-width: 160px;
+      z-index: 1;
+      flex-direction: column;
+    }
+    .dropdown-content a {
+      padding: 12px 16px;
+      color: white;
+    }
+    nav li:hover .dropdown-content {
+      display: flex;
+    }
+
+#services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  background-color: #f5f0e6;
+  text-align: center;
+}
+.service i {
+  color: #7a4c2e;
+  margin-bottom: 10px;
+}
+
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Euler Design Engineer</h1>
+    <p>Innovative Structural Solutions for Residential and Commercial Projects</p>
+  </header>
+
+
+   <nav>
+    <ul>
+      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#services"><i class="fas fa-tools"></i> Services</a></li>
+      <li>
+        <a href="#portfolio"><i class="fas fa-warehouse"></i> Portfolio</a>
+        <div class="dropdown-content">
+          <a href="#wood"><i class="fas fa-tree"></i> Wood</a>
+          <a href="#steel"><i class="fas fa-industry"></i> Steel</a>
+          <a href="#cmu"><i class="fas fa-cubes"></i> CMU</a>
+        </div>
+      </li>
+      <li>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <div class="dropdown-content">
+          <a href="#contact-us"><i class="fas fa-phone"></i> Contact Us</a>
+          <a href="#career"><i class="fas fa-briefcase"></i> Career</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+<section class="hero">
+    <h1>We Design Strong Foundations</h1>
+    <p>Specialized in structural design and drafting for US-based residential and apartment projects, including Arizona.</p>
+  </section>  
+  <div class="slider">
+    <div class="slides">
+      <div class="slide">
+        <img src="https://via.placeholder.com/1200x400?text=Project+1" alt="Project 1">
+        <div class="slide-caption">Apartment Complex - Phoenix, AZ | RCC Framing & Foundation</div>
+      </div>
+      <div class="slide">
+        <img src="https://via.placeholder.com/1200x400?text=Project+2" alt="Project 2">
+        <div class="slide-caption">Residential Villa - Tucson, AZ | Wood Framing & Seismic Design</div>
+      </div>
+      <div class="slide">
+        <img src="https://www.countryliving.com/home-design/g1887/tiny-house/" alt="Project 3">
+      </div>
+    </div>
+  </div> 
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="service">
+    <i class="fas fa-drafting-compass fa-2x"></i>
+    <h3>Structural Design</h3>
+    <p>We provide safe and cost-effective structural solutions for buildings and infrastructure.</p>
+  </div>
+  <div class="service">
+    <i class="fas fa-pencil-ruler fa-2x"></i>
+    <h3>Structure Drafting</h3>
+    <p>Precise and detailed drawings for permitting, fabrication, and construction.</p>
+  </div>
+  <div class="service">
+    <i class="fas fa-chalkboard-teacher fa-2x"></i>
+    <h3>Project Consultation</h3>
+    <p>Expert advice on material selection, codes, and project planning.</p>
+  </div>
+</section>
+
+  </section>  <section class="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-members">
+      <div class="member">
+        <img src="https://via.placeholder.com/100" alt="Muhammad Faisal">
+        <h4>M.S Faisal</h4>
+        <p>Founder & Structural Engineer</p>
+      </div>
+      <div class="member">
+        <img src="https://via.placeholder.com/100" alt="Team Member">
+        <h4>Jane Doe</h4>
+        <p>Senior Drafting Expert</p>
+      </div>
+      <div class="member">
+        <img src="https://via.placeholder.com/100" alt="Team Member">
+        <h4>John Smith</h4>
+        <p>Project Consultant</p>
+      </div>
+    </div>
+  </section>  <section class="software">
+    <h2>Software We Use</h2>
+    <div class="software-list">
+      <div class="software-item"><img src="https://img.icons8.com/color/48/staad.png" alt="STAAD Pro">STAAD Pro</div>
+      <div class="software-item"><img src="https://img.icons8.com/color/48/etabs.png" alt="ETABS">ETABS</div>
+      <div class="software-item"><img src="https://img.icons8.com/color/48/autocad.png" alt="AutoCAD">AutoCAD</div>
+      <div class="software-item"><img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel">Microsoft Excel</div>
+      <div class="software-item"><img src="https://img.icons8.com/color/48/microsoft-word-2019.png" alt="Word">Microsoft Word</div>
+      <div class="software-item"><img src="https://img.icons8.com/color/48/pdf.png" alt="Foxit">Foxit PDF</div>
+      <div class="software-item"><img src="https://img.icons8.com/color/48/engineering.png" alt="Enercalc">Enercalc</div>
+    </div>
+  </section>  <footer>
+    <p>© 2025 Euler Design Engineer | Designed by M.S Faisal</p>
+  </footer>
+<script>
+  document.querySelectorAll('nav > div').forEach(div => {
+    div.addEventListener('mouseenter', () => div.querySelector('div').style.display = 'flex');
+    div.addEventListener('mouseleave', () => div.querySelector('div').style.display = 'none');
+  });
+</script>
+</body>
+</html>
